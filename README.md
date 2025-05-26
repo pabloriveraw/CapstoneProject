@@ -1,9 +1,10 @@
 
 
 # **Predicting Severity 1 (Reboot and Crash) Incidents Using Machine Learning on Severity 2 Telemetry from Cloud DataCenter Nodes**
+### **Capstone Project Part 1 and Part2**
+#### Assignment 20.1 and 24.1
 
-
-### Author: Pablo Rivera
+#### Author: Pablo Rivera
 
 
 ## Executive Summary:
@@ -51,7 +52,7 @@ What methods are you using to answer the question?
 **Goal:** Understand the structure and quality of the telemetry data gathered from cloud infrastructure nodes
 
 - The dataset includes timestamped incident logs from nodes across multiple clusters.
-- Each log includes root cause analysis levels (RCALevel1 and RCALevel2), timestamp, NodeId, ClusterId, Team to Escalate, Service Name among many others 
+- Each log includes root cause analysis levels (RCALevel1 and RCALevel2), timestamp, NodeId, ClusterId, Team to Escalate, Service Name among many others
 - Dropped duplicated and columns with no information and correlation with the variables we were trying to predict, which is given a Sev2 if there is a high chance to escalate to Sev1
 - Visual inspection showed that a subset of nodes experienced Sev1 incidents without prior Sev2s—these were excluded to focus on potential escalation patterns.
 - Early pie charts and bar charts highlighted the potential for modeling escalation paths and revealed major contributors to Sev1 incidents.
@@ -80,7 +81,7 @@ What methods are you using to answer the question?
     - Precision: 82%
     - Recall: 28%
 - Insight: The model was effective in flagging true Sev1 risks BUT missed MANY actual Sev1 escalations—largely due to class imbalance.
-- Conclusion: Good first step, especially for filtering down thousands of Sev2 incidents, but not enough to predict most of the actual Sev1 yet 
+- Conclusion: Good first step, especially for filtering down thousands of Sev2 incidents, but not enough to predict most of the actual Sev1 yet
 
 ## What did your research find?
 
@@ -95,7 +96,7 @@ What methods are you using to answer the question?
 - **Post-balancing Random Forest results:**
   - Accuracy: ~66%
   - F1-score for both classes: ~66%
-  - Balanced precision and recall across classes. -> Model can predict much more actual Sev1 than the previous baseline :-). 
+  - Balanced precision and recall across classes. -> Model can predict much more actual Sev1 than the previous baseline :-).
 - **Hyperparameter tuning** via GridSearchCV did not yield significant additional gains.
 - Interpretation: The model became fairer across both classes, though performance remained bounded by the available feature richness.
 
@@ -115,7 +116,7 @@ What methods are you using to answer the question?
    - Node health trends (e.g., moving averages or variance)
    - Interaction terms (e.g., RCALevel2 + Cluster)
    - Add connection to RCALevel3 to deeper analysis
-   - Add connection to other internal systems to understand what components are failing 
+   - Add connection to other internal systems to understand what components are failing
    - Add connection to history of similar incidents to improve predictions.
    - Add connetion to type of resources running when Sev1 happened.
 
@@ -132,25 +133,27 @@ What methods are you using to answer the question?
 
 ## Outline of project
 
-* [1test EDA](https://github.com/pabloriveraw/testAssignment/blob/main/1test%20EDA%20-%20Required%20Capstone%20Assignment%2020.1%20Pablo%20Rivera.ipynb)
+* [1 EDA](https://github.com/pabloriveraw/CapstoneProject/blob/main/1%20EDA%20Capstone%20Pablo%20Rivera.ipynb)
 
-* [2test Charts](https://github.com/pabloriveraw/testAssignment/blob/main/2test%20Charts%20%26%20Correlations%20Required%20Capstone%20Assignment%2020.1%20Pablo%20Rivera.ipynb)
+* [2 Feature Engineering](https://github.com/pabloriveraw/CapstoneProject/blob/main/2%20Feature%20Engineering%20Capstone%20Pablo%20Rivera.ipynb)
 
-* [3test TRAINING](https://github.com/pabloriveraw/testAssignment/blob/main/3test%20TRAINING%20%26%20Results%20-%20Required%20Capstone%20Assignment%2020.1%20Pablo%20Rivera.ipynb)
+* [3 Training and Test](https://github.com/pabloriveraw/CapstoneProject/blob/main/3%20Training%20Capstone%20Pablo%20Rivera.ipynb)
 
-* [4test Bias Correction and Final Improvement](https://github.com/pabloriveraw/testAssignment/blob/main/4%20Bias%20Correction%20and%20Improvement.ipynb)
+* [4 Improvement](https://github.com/pabloriveraw/CapstoneProject/blob/main/4%20Improvement%20Capstone%20Pablo%20Rivera.ipynb)
 
 
 ## Files that are used in this project
 
-* 1 EDA - Required Capstone Assignment 20.1 Pablo Rivera.ipynb
-* 2 Charts & Correlations Required Capstone Assignment 20.1 Pablo Rivera.ipynb
-* 3 TRAINING & Results - Required Capstone Assignment 20.1 Pablo Rivera.ipynb
-* 4 requirements.txt
-* 5 NodeRack.png
-* 6 README.md
-* 7 Sev1.csv
-* 8 Sev1Telemetry.csv
+* 1 file "1 EDA Capstone Pablo Rivera.ipynb"
+* 2 file "2 Feature Engineering Capstone Pablo Rivera.ipynb"
+* 3 file "3 Training Capstone Pablo Rivera.ipynb"
+* 4 file "4 Improvement Capstone Pablo Rivera.ipynb"
+* 5 requirements.txt
+* 6 NodeRack.png
+* 7 README.md
+* 8 Sev1.csv
+* 9 Sev1Telemetry.csv
+* 10 Telemetry.png
 
 
 ## Software version required
